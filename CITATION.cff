@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: "Please cite the paper for its research and reported results. This unofficial reading guide did not reproduce the experiments."
+title: "MEV Origins Guide: a reading companion"
+authors:
+  - name: "0xHayd3n"
+version: "1.0.0"
+date-released: "2026-10-15"
+url: "https://github.com/0xHayd3n/mev-origins-guide"
+repository-code: "https://github.com/0xHayd3n/mev-origins-guide"
+license: "CC-BY-4.0"
+preferred-citation:
+  type: article
+  title: "The Origins of MEV: Systematic Attribution of Arbitrage Opportunity Creation at Scale"
+  authors:
+    - family-names: "Seoev"
+      given-names: "Andrei"
+    - family-names: "Belousov"
+      given-names: "Dmitry"
+    - family-names: "Smirnova"
+      given-names: "Anastasiia"
+    - family-names: "Kurinova"
+      given-names: "Ksenia"
+    - family-names: "Smirnov"
+      given-names: "Aleksei"
+    - family-names: "Fedyanin"
+      given-names: "Denis"
+    - family-names: "Yanovich"
+      given-names: "Yury"
+  year: 2026
+  date-published: "2026-04-30"
+  journal: "arXiv"
+  doi: "10.48550/arXiv.2604.27979"
+  url: "https://arxiv.org/abs/2604.27979v1"
+  notes: "arXiv:2604.27979v1. Version 1; 14 pages. Conference acceptance not verified."

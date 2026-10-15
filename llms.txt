@@ -1,0 +1,34 @@
+# MEV Origins Guide
+
+> Unofficial human and agent reading companion to The Origins of MEV: Systematic Attribution of Arbitrage Opportunity Creation at Scale, arXiv:2604.27979v1, by Andrei Seoev, Dmitry Belousov, Anastasiia Smirnova, Ksenia Kurinova, Aleksei Smirnov, Denis Fedyanin, and Yury Yanovich. Maintained under 0xHayd3n. No implementation or experimental reproduction.
+
+## Entry points
+
+- [README](README.md): Core idea, reading routes, scoped findings, important conflicts.
+- [Agent instructions](AGENTS.md): Attribution, evidence, uncertainty, and publication rules.
+- [Metadata](metadata.json): Pinned source identity, authors, scope, rights, provenance, and routing.
+
+## Explanations
+
+- [Reading map](notes/01-reading-map.md): Section and page navigation.
+- [Methods](notes/02-methods.md): Formal problem, four methods, notation, algorithms, and ambiguities.
+- [Results](notes/03-results.md): Separate datasets, reported comparison, dominance, convergence, protocol participation.
+- [Limitations](notes/04-limitations.md): Paper limitations, model assumptions, and v1 discrepancies.
+- [Reproduction](notes/05-reproduction.md): Requirements and questions for an independent implementation; no claim to have run it.
+- [Figures and tables](notes/06-figures-and-tables.md): Visual locators and responsible interpretation.
+- [Glossary](notes/07-glossary.md): MEV creation, extraction, profit, baseline, marginal effects, and Shapley terms.
+- [Structured results](data/results.json): Author-reported values with conflicts and source scope retained.
+
+## Sources and reuse
+
+- [Official v1 record](https://arxiv.org/abs/2604.27979v1): Source identity and CC BY 4.0 licence link.
+- [Official v1 PDF](https://arxiv.org/pdf/2604.27979v1): Authoritative page and table locators.
+- [Source record](SOURCES.md): Verification boundary and attachment fallback disclosure.
+- [Attribution](ATTRIBUTION.md): Full author credit and adaptation notice.
+- [Citation](CITATION.cff): Preferred citation is the paper.
+- [BibTeX](references/paper.bib): Versioned paper citation.
+- [Guide licence](LICENSE.md): CC BY 4.0 guide; separate MIT validation code.
+
+## Evidence cautions
+
+Every experimental value is paper-reported. 96.7% refers to February dominance above 70% of positive Shapley value, not exactly one nonzero cause. March has 360,026 events; February has 2,526. Protocol participation percentages overlap. Coverage, runtime, population labels, and Figure 6 units have unresolved source conflicts: read the limitations with the results. Static content validation does not reproduce the study.

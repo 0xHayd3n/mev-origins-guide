@@ -1,0 +1,145 @@
+{
+  "schema_version": "1.0",
+  "record_type": "paper_reported_results_with_reading_caveats",
+  "reproduction_status": "not_reproduced",
+  "source": {
+    "title": "The Origins of MEV: Systematic Attribution of Arbitrage Opportunity Creation at Scale",
+    "authors": ["Andrei Seoev", "Dmitry Belousov", "Anastasiia Smirnova", "Ksenia Kurinova", "Aleksei Smirnov", "Denis Fedyanin", "Yury Yanovich"],
+    "arxiv_id": "2604.27979v1",
+    "date": "2026-04-30",
+    "abstract_url": "https://arxiv.org/abs/2604.27979v1",
+    "pdf_url": "https://arxiv.org/pdf/2604.27979v1",
+    "page_convention": "printed PDF page numbers"
+  },
+  "interpretation": {
+    "all_measurements": "Reported by the paper's authors, not measured by this guide.",
+    "percent_units": "Reported percentages use a 0-100 scale, not fractions. Differences between percentages would be percentage points.",
+    "conflict_policy": "Preserve conflicting v1 statements with locators. Do not choose a replacement value without additional evidence.",
+    "further_detail": "../notes/04-limitations.md"
+  },
+  "datasets": [
+    {
+      "id": "march_large_scale",
+      "chain": "Polygon",
+      "block_start_inclusive": 83770001,
+      "block_end_inclusive": 84820000,
+      "date_start_reported": "2026-03-02",
+      "date_end_reported": "2026-03-29",
+      "atomic_arbitrage_events_reported": 360026,
+      "extracted_mev_usd_reported": 334799,
+      "valuation": "Execution-time oracle prices; internal computation in MATIC.",
+      "purpose": "Large-scale attribution and protocol distribution analysis.",
+      "source_locator": "Section 5.1, p. 8"
+    },
+    {
+      "id": "february_method_comparison",
+      "chain": "Polygon",
+      "block_start_inclusive": 82546747,
+      "block_end_inclusive": 82567395,
+      "date_reported": "2026-02-04",
+      "duration_reported": "near 12 hours",
+      "atomic_arbitrage_events_reported": 2526,
+      "purpose": "Method comparison and single-source hypothesis validation.",
+      "source_locator": "Section 5.1, p. 8"
+    }
+  ],
+  "table_2": {
+    "dataset_id": "february_method_comparison",
+    "event_count": 2526,
+    "source_locator": "Table 2, p. 9",
+    "accuracy_definition_as_captioned": "Triangulated ground truth, or exact Shapley for Shapley methods.",
+    "coverage_definition_as_captioned": "Fraction of events with valid attribution.",
+    "timing_definition_as_captioned": "Mean execution time per event.",
+    "rows": [
+      {"method": "bot_data", "accuracy_percent_reported": 94.2, "coverage_percent_reported": 38.4, "mean_time_ms_reported": 8},
+      {"method": "simulation", "accuracy_percent_reported": 91.7, "coverage_percent_reported": 99.1, "mean_time_ms_reported": 12.3},
+      {"method": "coefficient", "accuracy_percent_reported": 77.2, "coverage_percent_reported": 88.4, "mean_time_ms_reported": 0.8, "caveat": "Section 5.4 describes 77.2% as agreement with simulation, differing from the caption's reference description."},
+      {"method": "shapley_exact", "accuracy_percent_reported": 100, "coverage_percent_reported": 98.1, "mean_time_approx_minutes_reported": 5, "caveat": "Section 5.2 reports exact coverage of 12.0%, not 98.1%. Exact Shapley defines part of the reference."},
+      {"method": "shapley_monte_carlo", "samples": 1000, "accuracy_percent_reported": 100, "coverage_percent_reported": 98.1, "mean_time_seconds_reported": 2.1, "caveat": "Section 5.2 reports Monte Carlo coverage of 100%, not 98.1%. This attribution score is not a zero-error guarantee for contribution vectors."}
+    ]
+  },
+  "validation_reported": {
+    "dataset_id": "february_method_comparison",
+    "bot_consensus_coverage_percent": 38.4,
+    "manual_review_events": 200,
+    "manual_sampling": "stratified",
+    "correctness_rule": "Agreement with at least two sources.",
+    "initial_state_agreement": "S0 attributions count as matches when methods agree on no in-block source.",
+    "source_locator": "Section 5.2, p. 8"
+  },
+  "single_source_reported": {
+    "dataset_id": "february_method_comparison",
+    "dominant_source_events_percent": 96.7,
+    "dominance_definition": "One transaction contributes more than 70% of total positive Shapley value.",
+    "next_largest_contribution_description": "Typically less than 5%.",
+    "tied_maximum_events": 83,
+    "tied_maximum_events_percent": 3.3,
+    "tied_source_count_distribution": [{"sources": 2, "events": 71}, {"sources": 3, "events": 8}, {"sources": 4, "events": 2}, {"sources": 6, "events": 2}],
+    "equal_all_positive_contributor_events": 42,
+    "equal_all_positive_contributor_events_percent_of_tied": 50.6,
+    "subsequently_described_remaining_cascade_events": 33,
+    "caveat": "42 plus 33 equals 75, leaving 8 of the reported 83 tied cases unclassified by that paragraph.",
+    "source_locator": "Section 5.3, pp. 8-9"
+  },
+  "monte_carlo_convergence_reported": {
+    "example_block": 82554874,
+    "event_identifier_truncated": "0xb1f2a5bb...",
+    "candidate_count_in_convergence_text": 16,
+    "exact_subsets_in_example": 65536,
+    "stabilization_description": "Within 5% of asymptotic values after approximately 500 samples.",
+    "default_samples": 1000,
+    "runs_for_displayed_mean_and_standard_deviation": 100,
+    "caveat": "Illustrated convergence is not a uniform error or ranking guarantee; relative error needs clarification at zero or near-zero values.",
+    "source_locator": "Section 5.3, p. 9; Figure 4, p. 10"
+  },
+  "protocol_and_concentration_reported": {
+    "dataset_id": null,
+    "dataset_caveat": "Section 5.5 opens with March but labels 220,262 opportunity transactions as February, also repeated by Figure 6. Scope unresolved.",
+    "opportunity_creator_transactions_prose_and_caption": 220262,
+    "opportunity_creator_transactions_figure_6_legend": 220264,
+    "amm_involving_transaction_count_raw_text": "212,62",
+    "amm_involving_transaction_count_parsed": null,
+    "identifiable_amm_participation_percent": 96.5,
+    "unique_amm_protocols": 18,
+    "amm_participation_frequencies_percent": {"Uniswap V3": 58.0, "Algebra": 29.6, "Uniswap V4": 28.9, "Uniswap V2": 23.2, "DODO": 8.2},
+    "participation_denominator": "Opportunity transactions; multiple AMMs can occur in a transaction, so categories overlap.",
+    "top_percentile_reported": 1,
+    "value_share_at_top_percentile_percent_approx": 80,
+    "concentration_unit_caveat": "Prose describes arbitrageurs/address level; Figure 6 labels transaction percentiles. Do not infer verified entity concentration.",
+    "successfully_executed_arbitrage_per_creator_approx": 1.6,
+    "ratio_scope_caveat": "Executed transactions do not count every attempted bid, failed transaction, or off-chain search.",
+    "source_locator": "Section 5.5, pp. 9-10; Figure 6, p. 10"
+  },
+  "conclusion_only_protocol_value_claim": {
+    "top_protocols_percent": 5,
+    "value_share_percent": 73,
+    "source_locator": "Section 8, p. 12",
+    "caveat": "No matching protocol-value table is supplied in Section 5.5 or Figure 6; do not equate this with overlapping AMM participation or transaction concentration."
+  },
+  "runtime_statements": {
+    "full_march_simulation_runtime_hours_approx_reported": 80,
+    "mean_simulation_time_ms_per_event_reported": 12.3,
+    "source_locator": "Section 5.4 and Table 2, p. 9",
+    "guide_arithmetic_check": {
+      "kind": "derived_from_printed_values_not_reproduced_measurement",
+      "formula": "360026 * 12.3 / 1000",
+      "seconds": 4428.3198,
+      "minutes": 73.80533,
+      "hours_approx": 1.23009
+    },
+    "caveat": "The reported aggregate is not implied by the mean and event count. Additional timing scope or overhead is possible but not established by a breakdown in v1."
+  },
+  "coverage_conflicts": [
+    {"method": "shapley_exact", "statements": [{"percent": 12.0, "source_locator": "Section 5.2, p. 8"}, {"percent": 98.1, "source_locator": "Table 2, p. 9"}], "status": "unresolved"},
+    {"method": "shapley_monte_carlo", "statements": [{"percent": 100, "source_locator": "Section 5.2, p. 8"}, {"percent": 98.1, "source_locator": "Table 2, p. 9"}], "status": "unresolved"}
+  ],
+  "coverage_partition_as_written": {
+    "exact_percent": 12.0,
+    "candidate_set_at_least_20_percent": 2,
+    "initial_state_attribution_percent": 23,
+    "initial_state_profit_share_percent_upper_bound_exclusive": 4,
+    "guide_sum_check_percent": 37,
+    "caveat": "The described categories do not form an exhaustive partition as written.",
+    "source_locator": "Section 5.2, p. 8"
+  }
+}

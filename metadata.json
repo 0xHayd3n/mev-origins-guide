@@ -1,0 +1,84 @@
+{
+  "schema_version": "1.0",
+  "repository": {
+    "name": "mev-origins-guide",
+    "url": "https://github.com/0xHayd3n/mev-origins-guide",
+    "maintainer": "0xHayd3n",
+    "kind": "unofficial-reading-guide",
+    "author_endorsement": false,
+    "verified_on": "2026-10-15"
+  },
+  "paper": {
+    "title": "The Origins of MEV: Systematic Attribution of Arbitrage Opportunity Creation at Scale",
+    "arxiv_id": "2604.27979",
+    "version": "v1",
+    "submitted": "2026-04-30",
+    "pages": 14,
+    "authors": [
+      {"given": "Andrei", "family": "Seoev"},
+      {"given": "Dmitry", "family": "Belousov"},
+      {"given": "Anastasiia", "family": "Smirnova"},
+      {"given": "Ksenia", "family": "Kurinova"},
+      {"given": "Aleksei", "family": "Smirnov"},
+      {"given": "Denis", "family": "Fedyanin"},
+      {"given": "Yury", "family": "Yanovich"}
+    ],
+    "doi": "10.48550/arXiv.2604.27979",
+    "publication_status": "arXiv preprint; conference acceptance not verified",
+    "license": "CC-BY-4.0",
+    "urls": {
+      "abstract": "https://arxiv.org/abs/2604.27979v1",
+      "pdf": "https://arxiv.org/pdf/2604.27979v1",
+      "html": "https://arxiv.org/html/2604.27979v1",
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "official_project": null,
+      "official_code": null,
+      "official_dataset": null
+    }
+  },
+  "research_status": {
+    "implements_paper": false,
+    "experiments_reproduced": false,
+    "experimental_numbers": "author-reported; internally inconsistent values retained with source locators",
+    "validation_scope": "documentation links, metadata, attribution, and publication hygiene only",
+    "source_assets_redistributed": false,
+    "bot_logs_available": false,
+    "retrospective_code_status_in_v1": "promised future release upon publication; no designated URL identified in checked primary sources"
+  },
+  "provenance": {
+    "reading_source": "official arXiv v1 PDF, compared with Library paper text",
+    "pdf_bytes": 945083,
+    "pdf_sha256": "89d7a8d0d7f03dfac6863747ba07326ba9369c1d3607afb65edd5eb743b4faa6",
+    "attachment_materialization_completed": false,
+    "attachment_byte_equivalence_verified": false,
+    "materialization_limit": "Library helper requires os.setxattr, unavailable in consuming Windows Python environment",
+    "source_record": "SOURCES.md"
+  },
+  "scope": {
+    "chain": "Polygon",
+    "category": "observed atomic arbitrage; excludes other MEV categories from evaluated scope",
+    "comparison_events_february": 2526,
+    "large_scale_events_march": 360026,
+    "large_scale_blocks_march": 1050000,
+    "single_source_definition": "one transaction contributes more than 70 percent of positive Shapley value",
+    "single_source_percentage": 96.7,
+    "single_source_dataset": "February 4, 2026 comparison"
+  },
+  "routing": {
+    "start": "README.md",
+    "agent_instructions": "AGENTS.md",
+    "index": "llms.txt",
+    "reading_map": "notes/01-reading-map.md",
+    "methods": "notes/02-methods.md",
+    "results": "notes/03-results.md",
+    "limitations": "notes/04-limitations.md",
+    "reproduction": "notes/05-reproduction.md",
+    "visuals": "notes/06-figures-and-tables.md",
+    "glossary": "notes/07-glossary.md",
+    "structured_results": "data/results.json"
+  },
+  "licensing": {
+    "guide_prose_diagrams_data": "CC-BY-4.0; see ATTRIBUTION.md",
+    "original_validator_code_and_workflow": "MIT; see LICENSE-CODE"
+  }
+}
